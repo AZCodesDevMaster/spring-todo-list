@@ -2,6 +2,9 @@ package com.example.spring_todo_list.model;
 
 import java.time.LocalDateTime;
 
+/**
+ * Represents a task in the ToDo List application.
+ */
 public class Task {
 
     private Long taskId;

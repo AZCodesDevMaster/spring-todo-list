@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * Repository interface for managing Task entities.
+ */
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
 
