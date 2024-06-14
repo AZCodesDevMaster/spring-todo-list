@@ -48,6 +48,55 @@ This application allows users to manage their tasks with features like creating,
    java -jar target/spring-todo-list-0.0.1-SNAPSHOT.jar
    
 8. Access the application in your web browser at http://localhost:8080.
+</details>
+
+<details>
+<summary><strong>Importing the Project into IntelliJ IDEA</strong></summary>
+
+1. Import the Project:
+
+  - Go to File > New > Project from Existing Sources....
+    
+  - Navigate to the directory where you cloned the project and select the pom.xml file.
+    
+  - Click Open.
+
+2. Import Maven Projects:
+   
+   - IntelliJ IDEA will automatically detect that it is a Maven project and will start importing dependencies.
+   If prompted, enable Auto-Import for Maven projects.
+
+4. Run the Application:
+   
+   - In the Project view, navigate to src/main/java/com/example/spring_todo_list/SpringTodoListApplication.java.
+   - Right-click on SpringTodoListApplication and select Run 'SpringTodoListApplication'.
 
 
+6. Access the application:
+   
+   - Open your web browser and navigate to http://localhost:8080.
+</details>
 
+<details>
+<summary><strong>Configuration for PostgreSQL</strong></summary>
+
+1. Create a Database:
+
+   - Create a new database in PostgreSQL named TaskListDB (or any name of your choice).
+     
+2. Configure application.properties:
+
+   - Open the src/main/resources/application.properties file and configure the PostgreSQL connection settings:
+
+   ```sh
+   spring.datasource.url=jdbc:postgresql://localhost:5432/TaskListDB
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+
+3. Run the Application:
+
+  - Follow the steps under "Run the Application" to start the application with PostgreSQL configured.
+
+</details>
