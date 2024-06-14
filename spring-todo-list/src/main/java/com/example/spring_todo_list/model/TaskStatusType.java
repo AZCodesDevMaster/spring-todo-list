@@ -1,7 +1,8 @@
 package com.example.spring_todo_list.model;
 
 /**
- * Enumeration for task status types.
+ * Enumeration representing the status of a task.
+ * Possible values are PENDING, IN_PROGRESS, COMPLETED, and CANCELLED.
  */
 public enum TaskStatusType {
     PENDING,

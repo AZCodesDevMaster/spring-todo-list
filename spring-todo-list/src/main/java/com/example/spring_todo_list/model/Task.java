@@ -7,13 +7,14 @@ import java.time.LocalDateTime;
  */
 public class Task {
 
-    private Long taskId;
-    private String taskTitle;
-    private String taskDescription;
-    private LocalDateTime taskCreatedAt;
-    private LocalDateTime taskUpdatedAt;
-    private LocalDateTime taskDueDate;
-    private TaskStatusType taskStatus;
+    // Fields representing various aspects of a task
+    private Long taskId; // Unique identifier for the task
+    private String taskTitle; // Title of the task
+    private String taskDescription; // Description of the task
+    private LocalDateTime taskCreatedAt; // Date and time when the task was created
+    private LocalDateTime taskUpdatedAt; // Date and time when the task was last updated
+    private LocalDateTime taskDueDate; // Due date of the task
+    private TaskStatusType taskStatus; // Status of the task (e.g., Pending, In Progress, Completed)
 
     public Task() {
     }
