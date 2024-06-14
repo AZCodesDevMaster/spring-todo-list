@@ -6,6 +6,14 @@ A simple to-do list application using Spring Boot.
 
 This application allows users to manage their tasks with features like creating, updating, and deleting tasks.
 
+## Project Files
+
+- **TaskController.java:** Contains the `TaskController` class for handling HTTP requests related to tasks.
+- **Task.java:** Represents a task in the ToDo List application.
+- **TaskStatusType.java:** Enum for task status types.
+- **TaskRepository.java:** Repository interface for managing Task entities.
+- **TaskService.java:** Service class for managing tasks in the ToDo list application.
+
 ## Technologies Used
 
 - Java
@@ -40,3 +48,6 @@ This application allows users to manage their tasks with features like creating,
    java -jar target/spring-todo-list-0.0.1-SNAPSHOT.jar
    
 8. Access the application in your web browser at http://localhost:8080.
+
+
+
