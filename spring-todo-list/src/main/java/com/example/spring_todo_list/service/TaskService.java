@@ -34,18 +34,18 @@ public class TaskService {
      * @param taskId The unique identifier of the task.
      * @return The task object with the specified identifier, or null if not found.
      */
-    public Task getTaskById(Long taskId) {
-        return taskRepository.findById(taskId).orElse(null);
+    public Task getTaskByTaskId(Long taskId) {
+        return taskRepository.findByTaskId(taskId).orElse(null);
     }
 
     /**
      * Retrieves a list of tasks with a specific status.
      *
-     * @param status The status to filter tasks.
+     * @param taskStatus The status to filter tasks.
      * @return A list of tasks with the specified status.
      */
-    public List<Task> findByStatus(TaskStatusType status) {
-        return taskRepository.findByTaskStatus(status);
+    public List<Task> findByTaskStatus(TaskStatusType taskStatus) {
+        return taskRepository.findByTaskStatus(taskStatus);
     }
 
     /**

@@ -1,19 +1,27 @@
 package com.example.spring_todo_list.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 
 /**
  * Represents a task in the ToDo List application.
  */
+@Entity
+@Table(name= "tasks")
 public class Task {
 
     // Fields representing various aspects of a task
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId; // Unique identifier for the task
     private String taskTitle; // Title of the task
     private String taskDescription; // Description of the task
     private LocalDateTime taskCreatedAt; // Date and time when the task was created
     private LocalDateTime taskUpdatedAt; // Date and time when the task was last updated
     private LocalDateTime taskDueDate; // Due date of the task
+
+    @Enumerated(EnumType.STRING)
     private TaskStatusType taskStatus; // Status of the task (e.g., Pending, In Progress, Completed)
 
     public Task() {

@@ -40,7 +40,7 @@ public class TaskController {
      */
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long taskId) {
-        Task task = taskService.getTaskById(taskId);
+        Task task = taskService.getTaskByTaskId(taskId);
         if (task != null) {
             return new ResponseEntity<>(task, HttpStatus.OK);
         } else {
@@ -95,12 +95,12 @@ public class TaskController {
     /**
      * Retrieves a list of tasks with a specific status.
      *
-     * @param status The status to filter tasks.
+     * @param taskStatus The status to filter tasks.
      * @return A list of tasks with the specified status.
      */
-    @GetMapping("/status/{status}")
-    public ResponseEntity<List<Task>> getTasksByStatus(@PathVariable("status") TaskStatusType status) {
-        List<Task> tasks = taskService.findByStatus(status);
+    @GetMapping("/taskStatus/{taskStatus}")
+    public ResponseEntity<List<Task>> getTasksByStatus(@PathVariable("taskStatus") TaskStatusType taskStatus) {
+        List<Task> tasks = taskService.findByTaskStatus(taskStatus);
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 }

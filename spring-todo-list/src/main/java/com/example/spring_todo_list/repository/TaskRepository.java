@@ -28,47 +28,38 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
      * @param taskId The unique identifier of the task.
      * @return An Optional containing the task with the specified identifier, or empty if not found.
      */
-    public Optional<Task> findById(Long taskId);
+    public Optional<Task> findByTaskId(Long taskId);
 
     /**
      * Retrieves tasks by title.
      *
-     * @param title The title to filter tasks.
+     * @param taskTitle The title to filter tasks.
      * @return A list of tasks with the specified title.
      */
-    List<Task> findByTitle(String title);
+    List<Task> findByTaskTitle(String taskTitle);
 
     /**
      * Retrieves tasks by status.
      *
-     * @param status The status to filter tasks.
+     * @param taskStatus The status to filter tasks.
      * @return A list of tasks with the specified status.
      */
-    List<Task> findByStatus(TaskStatusType status);
+    List<Task> findByTaskStatus(TaskStatusType taskStatus);
 
     /**
      * Retrieves tasks with due dates before the given date.
      *
-     * @param dueDate The due date to filter tasks.
+     * @param taskDueDate The due date to filter tasks.
      * @return A list of tasks with due dates before the specified date.
      */
-    List<Task> findByDueDateBefore(LocalDate dueDate);
+    List<Task> findByTaskDueDateBefore(LocalDate taskDueDate);
 
     /**
      * Retrieves tasks with titles containing the specified keyword.
      *
-     * @param keyWord The keyword to search for in task titles.
+     * @param taskTitle The keyword to search for in task titles.
      * @return A list of tasks with titles containing the specified keyword.
      */
-    List<Task> findByTitleContaining(String keyWord);
+    List<Task> findByTaskTitleContaining(String taskTitle);
 
-    /**
-     * Retrieves tasks with descriptions containing the specified keyword.
-     *
-     * @param keyWord The keyword to search for in task descriptions.
-     * @return A list of tasks with descriptions containing the specified keyword.
-     */
-    List<Task> findByDescriptionContaining(String keyWord);
-
-    List<Task> findByTaskStatus(TaskStatusType status);
 }
