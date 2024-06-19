@@ -14,6 +14,15 @@ This application allows users to manage their tasks with features like creating,
 - **TaskRepository.java:** Repository interface for managing Task entities.
 - **TaskService.java:** Service class for managing tasks in the ToDo list application.
 
+##  API Endpoints
+- **GET /api/todos - Get all to-do items
+- **GET /api/todos/{id} - Get a to-do item by ID
+- **POST /api/todos - Create a new to-do item
+- **PUT /api/todos/{id} - Update a to-do item
+- **DELETE /api/todos/{id} - Delete a to-do item
+- **PUT /api/todos/{id}/complete - Mark a to-do item as complete
+- **PUT /api/todos/{id}/incomplete - Mark a to-do item as incomplete
+  
 ## Technologies Used
 
 - Java
@@ -27,6 +36,7 @@ This application allows users to manage their tasks with features like creating,
 ### Prerequisites
 
 - Java 11 or higher
+- Maven
 - PostgreSQL
 
 <details>
@@ -82,7 +92,7 @@ This application allows users to manage their tasks with features like creating,
 
 1. Create a Database:
 
-   - Create a new database in PostgreSQL named TaskListDB (or any name of your choice).
+   - Create a new database in PostgreSQL named tasklistdb (or any name of your choice).
      
 2. Configure application.properties:
 
