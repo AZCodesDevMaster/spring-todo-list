@@ -2,19 +2,22 @@ package com.example.spring_todo_list.model.user;
 
 import jakarta.persistence.*;
 
+/**
+ * Entity class representing a user in the system.
+ */
 @Entity
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // The primary key identifier for the user
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String username; // The username of the user. This field is unique and cannot be null.
 
     @Column(nullable = false)
-    private String password;
+    private String password; // The password of the user. This field cannot be null.
 
     public User(){}
 
