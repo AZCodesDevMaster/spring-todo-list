@@ -28,6 +28,7 @@ This application allows users to manage their tasks with features like creating,
 - Java
 - Spring Boot
 - Spring Data JPA
+- Spring Security
 - PostgreSQL
 - Maven
 
@@ -35,9 +36,10 @@ This application allows users to manage their tasks with features like creating,
 
 ### Prerequisites
 
-- Java 11 or higher
+- Java 17+
 - Maven
 - PostgreSQL
+- Git
 
 <details>
 <summary><strong>Installation</strong></summary>
@@ -93,6 +95,8 @@ This application allows users to manage their tasks with features like creating,
 1. Create a Database:
 
    - Create a new database in PostgreSQL named tasklistdb (or any name of your choice).
+      ```sh
+      CREATE DATABASE tasklistdb
      
 2. Configure application.properties:
 
