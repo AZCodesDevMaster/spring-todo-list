@@ -7,12 +7,22 @@ A simple to-do list application using Spring Boot.
 This application allows users to manage their tasks with features like creating, updating, and deleting tasks.
 
 ## Project Files
-
-- **TaskController.java:** Contains the `TaskController` class for handling HTTP requests related to tasks.
-- **Task.java:** Represents a task in the ToDo List application.
-- **TaskStatusType.java:** Enum for task status types.
-- **TaskRepository.java:** Repository interface for managing Task entities.
-- **TaskService.java:** Service class for managing tasks in the ToDo list application.
+- **Configuration**:
+  - WebSecurityConfig.java: Contains Spring Security configuration for handling user authentication and authorization.
+- **Controller**:
+  - TaskController.java: Handles HTTP requests related to tasks.
+  - UserController.java: Handles HTTP requests related to users.
+- **Model**:
+  - User.java: Represents a user entity in the application.
+  - Task.java: Represents a task in the ToDo List application.
+  - TaskStatusType.java: Enum for task status types.
+- **Repository**:
+  - TaskRepository.java: Repository interface for managing Task entities.
+  - UserRepository.java: Repository interface for managing User entities.
+ - **Service**:
+  - UserService.java: Service class for managing users in the application.
+  - UserDetailsServiceImpl.java: Custom implementation of UserDetailsService for Spring Security, used to load user-specific data.
+  - TaskService.java: Service class for managing tasks in the ToDo list application.
 
 ##  API Endpoints
 - **GET /api/todos - Get all to-do items
