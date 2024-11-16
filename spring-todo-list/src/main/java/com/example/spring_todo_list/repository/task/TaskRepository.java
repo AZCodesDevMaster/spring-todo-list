@@ -1,7 +1,7 @@
-package com.example.spring_todo_list.repository;
+package com.example.spring_todo_list.repository.task;
 
-import com.example.spring_todo_list.model.Task;
-import com.example.spring_todo_list.model.TaskStatusType;
+import com.example.spring_todo_list.model.task.Task;
+import com.example.spring_todo_list.model.task.TaskStatusType;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

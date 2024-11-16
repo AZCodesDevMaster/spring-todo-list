@@ -1,8 +1,8 @@
-package com.example.spring_todo_list.service;
+package com.example.spring_todo_list.service.task;
 
-import com.example.spring_todo_list.model.Task;
-import com.example.spring_todo_list.model.TaskStatusType;
-import com.example.spring_todo_list.repository.TaskRepository;
+import com.example.spring_todo_list.model.task.Task;
+import com.example.spring_todo_list.model.task.TaskStatusType;
+import com.example.spring_todo_list.repository.task.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,15 +1,13 @@
 package com.example.spring_todo_list;
 
-import com.example.spring_todo_list.model.Task;
-import com.example.spring_todo_list.model.TaskStatusType;
-import com.example.spring_todo_list.repository.TaskRepository;
-import com.example.spring_todo_list.service.TaskService;
+import com.example.spring_todo_list.model.task.Task;
+import com.example.spring_todo_list.model.task.TaskStatusType;
+import com.example.spring_todo_list.repository.task.TaskRepository;
+import com.example.spring_todo_list.service.task.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.spring_todo_list.model;
+package com.example.spring_todo_list.model.task;
 
 import jakarta.persistence.*;
 

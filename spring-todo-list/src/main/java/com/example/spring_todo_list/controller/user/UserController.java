@@ -1,8 +1,7 @@
-package com.example.spring_todo_list.controller;
+package com.example.spring_todo_list.controller.user;
 
 import com.example.spring_todo_list.model.user.User;
 import com.example.spring_todo_list.service.user.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

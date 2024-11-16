@@ -1,9 +1,8 @@
-package com.example.spring_todo_list.controller;
+package com.example.spring_todo_list.controller.task;
 
-import com.example.spring_todo_list.model.Task;
-import com.example.spring_todo_list.model.TaskStatusType;
-import com.example.spring_todo_list.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.spring_todo_list.model.task.Task;
+import com.example.spring_todo_list.model.task.TaskStatusType;
+import com.example.spring_todo_list.service.task.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
