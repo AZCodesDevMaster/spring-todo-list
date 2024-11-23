@@ -7,31 +7,53 @@ A simple to-do list application using Spring Boot.
 This application allows users to manage their tasks with features like creating, updating, and deleting tasks.
 
 ## Project Files
-- **Configuration**:
-  - WebSecurityConfig.java: Contains Spring Security configuration for handling user authentication and authorization.
-- **Controller**:
+
+<details>
+<summary><strong>Configuration</strong></summary>
+  
+    - WebSecurityConfig.java: Contains Spring Security configuration for handling user authentication and authorization.
+</details>
+
+<details>
+<summary><strong>Controller</strong></summary>
+  
     - task:
       - TaskController.java: Handles HTTP requests related to tasks.
+  
     - user:
       - UserController.java: Handles HTTP requests related to users.
-- **Model**:
-   - task:
-      - Task.java: Represents a task in the ToDo List application.
-      - TaskStatusType.java: Enum for task status types.
-   - user:
-      - User.java: Represents a user entity in the application.
+</details>
 
-- **Repository**:
-   - task:
+<details>
+<summary><strong>Model</strong></summary>
+  
+     - task:
+        - Task.java: Represents a task in the ToDo List application.
+        - TaskStatusType.java: Enum for task status types.
+     - user:
+        - User.java: Represents a user entity in the application.
+</details>
+
+<details>
+<summary><strong>Repository</strong></summary>
+  
+     - task:
        - TaskRepository.java: Repository interface for managing Task entities.
+         
     - user:
         - UserRepository.java: Repository interface for managing User entities.
- - **Service**:
+</details>
+
+<details>
+<summary><strong>Service</strong></summary>
+ 
     - task:
        - TaskService.java: Service class for managing tasks in the ToDo list application.
+       
     - user:
       - UserService.java: Service class for managing users in the application.
       - UserDetailsServiceImpl.java: Custom implementation of UserDetailsService for Spring Security, used to load user-specific data.
+</details>
 
 ##  API Endpoints
 - **GET /api/todos - Get all to-do items
