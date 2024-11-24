@@ -19,7 +19,7 @@ public class Task {
     private Long taskId; // Unique identifier for the task
 
     @NotNull(message = "Title cannot be null")
-    @Size(min=3, max=50, message = "Title must be bewteen 3 and 50 characters")
+    @Size(min=3, max=50, message = "Title must be between 3 and 50 characters")
     private String taskTitle; // Title of the task
 
     @Size(max=500, message = "Description cannot exceed 500 characters")
