@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -61,7 +62,7 @@ public class TaskController {
      * @return The created task object.
      */
     @PostMapping
-    public ResponseEntity<Task> createTask(@RequestBody Task task) {
+    public ResponseEntity<Task> createTask(@Valid @RequestBody Task task) {
         logger.info("Creating a new task: {}", task.getTaskTitle());
         Task createdTask = taskService.createTask(task);
         logger.info("Task created with ID: {}", createdTask.getTaskId());
@@ -76,7 +77,7 @@ public class TaskController {
      * @return The updated task object.
      */
     @PutMapping("/{taskId}")
-    public ResponseEntity<Task> updateTask(@PathVariable("taskId") Long taskId, @RequestBody Task task) {
+    public ResponseEntity<Task> updateTask(@PathVariable("taskId") Long taskId, @Valid @RequestBody Task task) {
         logger.info("Updating task with ID: {}", taskId);
         Task updatedTask = taskService.updateTask(taskId, task);
         logger.info("Task with ID {} updated successfully", taskId);

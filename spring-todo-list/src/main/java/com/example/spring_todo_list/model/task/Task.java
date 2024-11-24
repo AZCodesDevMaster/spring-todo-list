@@ -2,6 +2,8 @@ package com.example.spring_todo_list.model.task;
 
 import jakarta.persistence.*;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 /**
@@ -15,13 +17,19 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId; // Unique identifier for the task
+
+    @NotNull(message = "Title cannot be null")
+    @Size(min=3, max=50, message = "Title must be bewteen 3 and 50 characters")
     private String taskTitle; // Title of the task
+
+    @Size(max=500, message = "Description cannot exceed 500 characters")
     private String taskDescription; // Description of the task
     private LocalDateTime taskCreatedAt; // Date and time when the task was created
     private LocalDateTime taskUpdatedAt; // Date and time when the task was last updated
     private LocalDateTime taskDueDate; // Due date of the task
 
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "Status cannot be null")
     private TaskStatusType taskStatus; // Status of the task (e.g., Pending, In Progress, Completed)
 
     public Task() {
