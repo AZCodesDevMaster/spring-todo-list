@@ -79,11 +79,8 @@ public class TaskController {
     public ResponseEntity<Task> updateTask(@PathVariable("taskId") Long taskId, @RequestBody Task task) {
         logger.info("Updating task with ID: {}", taskId);
         Task updatedTask = taskService.updateTask(taskId, task);
-        if (updatedTask != null) {
-            return new ResponseEntity<>(updatedTask, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        logger.info("Task with ID {} updated successfully", taskId);
+        return new ResponseEntity<>(updatedTask, HttpStatus.OK);
     }
 
     /**
