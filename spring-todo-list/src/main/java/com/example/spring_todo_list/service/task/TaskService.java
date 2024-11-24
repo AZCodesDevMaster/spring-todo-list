@@ -1,5 +1,6 @@
 package com.example.spring_todo_list.service.task;
 
+import com.example.spring_todo_list.exception.task.TaskNotFoundException;
 import com.example.spring_todo_list.model.task.Task;
 import com.example.spring_todo_list.model.task.TaskStatusType;
 import com.example.spring_todo_list.repository.task.TaskRepository;
@@ -35,7 +36,8 @@ public class TaskService {
      * @return The task object with the specified identifier, or null if not found.
      */
     public Task getTaskByTaskId(Long taskId) {
-        return taskRepository.findByTaskId(taskId).orElse(null);
+        return taskRepository.findByTaskId(taskId)
+                .orElseThrow(() -> new TaskNotFoundException("Task with ID " + taskId + " not found"));
     }
 
     /**
