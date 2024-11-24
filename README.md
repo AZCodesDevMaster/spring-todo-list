@@ -18,6 +18,17 @@ This application allows users to manage their tasks with features like creating,
 <summary><strong>Controller</strong></summary>
   
     - task:
+      - TaskExceptionHandler.java: Handles exceptions globally for task-related operations.
+      - TaskNotFoundException.java: A custom exception thrown when a requested task is not found. 
+  
+    - user:
+      - UserExceptionHandler.java: 
+</details>
+
+<details>
+<summary><strong>Exception</strong></summary>
+  
+    - task:
       - TaskController.java: Handles HTTP requests related to tasks.
   
     - user:
