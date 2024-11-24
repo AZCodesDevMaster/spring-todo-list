@@ -34,6 +34,7 @@ public class TaskController {
      */
     @GetMapping
     public ResponseEntity<List<Task>> getAllTasks() {
+        logger.info("fetching all tasks");
         List<Task> tasks = taskService.getAllTasks();
         logger.debug("Number of tasks retrieved: {}", tasks.size());
         return new ResponseEntity<>(tasks, HttpStatus.OK);
@@ -48,14 +49,9 @@ public class TaskController {
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long taskId) {
         logger.info("Fetching task with ID :{}", taskId);
-        Task task = taskService.getTaskByTaskId(taskId);
-        if (task != null) {
-            logger.info("Task found: {}", task.getTaskTitle());
-            return new ResponseEntity<>(task, HttpStatus.OK);
-        } else {
-            logger.warn("Task with ID {} not found", taskId);
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        Task task = taskService.getTaskByTaskId(taskId); // Throws TaskNotFoundException if not found
+        logger.info("Task found: {}", task.getTaskTitle());
+        return new ResponseEntity<>(task, HttpStatus.OK);
     }
 
     /**
@@ -66,7 +62,9 @@ public class TaskController {
      */
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
+        logger.info("Creating a new task: {}", task.getTaskTitle());
         Task createdTask = taskService.createTask(task);
+        logger.info("Task created with ID: {}", createdTask.getTaskId());
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
@@ -79,6 +77,7 @@ public class TaskController {
      */
     @PutMapping("/{taskId}")
     public ResponseEntity<Task> updateTask(@PathVariable("taskId") Long taskId, @RequestBody Task task) {
+        logger.info("Updating task with ID: {}", taskId);
         Task updatedTask = taskService.updateTask(taskId, task);
         if (updatedTask != null) {
             return new ResponseEntity<>(updatedTask, HttpStatus.OK);
@@ -110,7 +109,9 @@ public class TaskController {
      */
     @GetMapping("/taskStatus/{taskStatus}")
     public ResponseEntity<List<Task>> getTasksByStatus(@PathVariable("taskStatus") TaskStatusType taskStatus) {
+        logger.info("Fetching tasks with status: {}", taskStatus);
         List<Task> tasks = taskService.findByTaskStatus(taskStatus);
+        logger.debug("Number of tasks with status {}: {}", taskStatus, tasks.size());
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 }

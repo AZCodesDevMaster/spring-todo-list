@@ -70,7 +70,8 @@ public class TaskService {
      * @return The updated task object, or null if the task with the given ID is not found.
      */
     public Task updateTask(Long taskId, Task updatedTask) {
-        Task existingTask = taskRepository.findById(taskId).orElse(null);
+        Task existingTask = taskRepository.findById(taskId)
+                .orElseThrow(()-> new TaskNotFoundException("Task with ID" + taskId +" not found"));
         if (existingTask != null) {
             existingTask.setTaskTitle(updatedTask.getTaskTitle());
             existingTask.setTaskDescription(updatedTask.getTaskDescription());
@@ -88,13 +89,10 @@ public class TaskService {
      * @param taskId The unique identifier of the task to be deleted.
      */
     public boolean deleteTask(Long taskId) {
-        Optional<Task> optionalTask = taskRepository.findById(taskId);
+        taskRepository.findById(taskId)
+                .orElseThrow(() -> new TaskNotFoundException("Task with ID" + taskId +" not found"));
 
-        if (optionalTask.isPresent()) {
-            taskRepository.deleteById(taskId);
-            return true; // Deletion successful
-        } else {
-            return false; // Task with the given ID not found
-        }
+        taskRepository.deleteById(taskId);
+        return true; // Deletion successful
     }
 }
