@@ -3,6 +3,9 @@ package com.example.spring_todo_list.controller.task;
 import com.example.spring_todo_list.model.task.Task;
 import com.example.spring_todo_list.model.task.TaskStatusType;
 import com.example.spring_todo_list.service.task.TaskService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +20,8 @@ import java.util.List;
 @RequestMapping("/tasks")
 public class TaskController {
 
-    final private TaskService taskService;
+    private final TaskService taskService;
+    private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
 
     public TaskController(TaskService taskService) {
         this.taskService = taskService;
@@ -31,6 +35,7 @@ public class TaskController {
     @GetMapping
     public ResponseEntity<List<Task>> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
+        logger.debug("Number of tasks retrieved: {}", tasks.size());
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 
@@ -42,10 +47,13 @@ public class TaskController {
      */
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long taskId) {
+        logger.info("Fetching task with ID :{}", taskId);
         Task task = taskService.getTaskByTaskId(taskId);
         if (task != null) {
+            logger.info("Task found: {}", task.getTaskTitle());
             return new ResponseEntity<>(task, HttpStatus.OK);
         } else {
+            logger.warn("Task with ID {} not found", taskId);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
